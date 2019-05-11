@@ -4,6 +4,8 @@ A sonarQube scanner docker image.
 
 The image is available on docker hub [pierdipi/sonar-scanner](https://hub.docker.com/r/pierdipi/sonar-scanner)
 
+---
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
@@ -11,7 +13,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 - [x] docker
-- [x] docker-compose (see [docker-compose](#using-with-docker-compose))
+- [x] docker-compose (see [using with docker-compose](#using-with-docker-compose))
 
 ### Verify prerequisites
 
@@ -19,6 +21,10 @@ These instructions will get you a copy of the project up and running on your loc
 docker --version
 git --version
 ```
+
+
+---
+
 
 ### Installing
 
@@ -40,9 +46,11 @@ cd sonarqube-scanner-docker
 docker build -t sonar-scanner:3.2.0 .
 ```
 
+---
+
 ### Running the container
 
-When you run the container the `run.sh` file sleeps 2 minutes 
+When you run the container it sleeps 2 minutes 
 in order to wait sonarQube server to be up and running.
 
 Replace `$(pwd)/src` with your directory that you want analyze.
@@ -51,7 +59,9 @@ Replace `$(pwd)/src` with your directory that you want analyze.
 docker run -it --rm --name sonar-scanner --link sonarqube -v $(pwd)/src:/sonar/app/src sonar-scanner:3.2.0
 ```
 
-___
+
+---
+
 
 
 ### Using with docker-compose
@@ -78,7 +88,10 @@ services:
 
 Replace `./src` to the line `- ./src:/sonar/app/src` with your directory that you want analyze.
 
-___
+
+---
+
+
 
 ## Built With
 
