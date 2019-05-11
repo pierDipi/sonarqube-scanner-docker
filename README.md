@@ -11,7 +11,7 @@ These instructions will get you a copy of the project up and running on your loc
 ### Prerequisites
 
 - [x] docker
-- [x] git
+- [x] docker-compose (see [docker-compose](#using-with-docker-compose))
 
 ### Verify prerequisites
 
