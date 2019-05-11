@@ -51,10 +51,14 @@ Replace `$(pwd)/src` with your directory that you want analyze.
 docker run -it --rm --name sonar-scanner --link sonarqube -v $(pwd)/src:/sonar/app/src sonar-scanner:3.2.0
 ```
 
+___
+
 
 ### Using with docker-compose
 
-Replace `./src` to the line `- ./src:/sonar/app/src` with your directory that you want analyze.
+Create a file called `docker-composer.yml`
+
+Copy the following docker-compose configuration:
 
 ```dockerfile
 version: '3.4'
@@ -72,6 +76,9 @@ services:
     restart: on-failure
 ```
 
+Replace `./src` to the line `- ./src:/sonar/app/src` with your directory that you want analyze.
+
+___
 
 ## Built With
 
