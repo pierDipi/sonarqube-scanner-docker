@@ -45,10 +45,10 @@ docker build -t sonar-scanner:3.2.0 .
 When you run the container the `run.sh` file sleeps 2 minutes 
 in order to wait sonarQube server to be up and running.
 
+You should replace `$(pwd)/src` with your directory that you want to be analyzed.
+
 ```bash
-
 docker run -it --rm --name sonar-scanner -v $(pwd)/src:/sonar/app/src sonar-scanner:3.2.0
-
 ```
 
 ## Built With
