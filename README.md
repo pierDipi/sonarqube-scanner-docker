@@ -45,11 +45,33 @@ docker build -t sonar-scanner:3.2.0 .
 When you run the container the `run.sh` file sleeps 2 minutes 
 in order to wait sonarQube server to be up and running.
 
-You should replace `$(pwd)/src` with your directory that you want to be analyzed.
+Replace `$(pwd)/src` with your directory that you want analyze.
 
 ```bash
 docker run -it --rm --name sonar-scanner -v $(pwd)/src:/sonar/app/src sonar-scanner:3.2.0
 ```
+
+
+### Using with docker-compose
+
+Replace `./src` to the line `- ./src:/sonar/app/src` with your directory that you want analyze.
+
+```dockerfile
+version: '3.4'
+services:
+  sonarqube:
+    image: sonarqube:7.7-community
+    ports:
+      - "9000:9000"
+    links:
+      - sonar-scanner
+  sonar-scanner:
+    image: pierdipi/sonar-scanner:3.2.0
+    volumes:
+      - ./src:/sonar/app/src
+    restart: on-failure
+```
+
 
 ## Built With
 
