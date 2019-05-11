@@ -2,6 +2,8 @@
 
 A sonarQube scanner docker image.
 
+The image is available on docker hub [pierdipi/sonar-scanner](https://hub.docker.com/r/pierdipi/sonar-scanner)
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine.
