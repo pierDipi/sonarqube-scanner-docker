@@ -56,7 +56,7 @@ in order to wait sonarQube server to be up and running.
 Replace `$(pwd)/src` with your directory that you want analyze.
 
 ```bash
-docker run -it --rm --name sonar-scanner --link sonarqube -v $(pwd)/src:/sonar/app/src sonar-scanner:3.2.0
+docker run -it --rm --name sonar-scanner --link sonarqube -v $(pwd)/src:/sonar/app/src pierdipi/sonar-scanner:3.2.0
 ```
 
 
