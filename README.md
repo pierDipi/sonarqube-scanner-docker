@@ -67,7 +67,7 @@ docker run -it --rm --name sonar-scanner --link sonarqube -v $(pwd)/src:/sonar/a
 
 ### Using with docker-compose
 
-Create a file called `docker-composer.yml`
+Create a file called `docker-compose.yml`
 
 Copy the following docker-compose configuration:
 
@@ -78,13 +78,13 @@ services:
     image: sonarqube:7.7-community
     ports:
       - "9000:9000"
-    links:
-      - sonar-scanner
   sonar-scanner:
     image: pierdipi/sonar-scanner:3.2.0
     volumes:
       - ./src:/sonar/app/src
     restart: on-failure
+    depends_on:
+      - sonarqube
 ```
 
 Replace `./src` to the line `- ./src:/sonar/app/src` with your directory that you want analyze.
