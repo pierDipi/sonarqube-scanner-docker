@@ -38,7 +38,7 @@ git clone https://github.com/pierDipi/sonarqube-scanner-docker.git
 ```bash 
 git submodule add https://github.com/pierDipi/sonarqube-scanner-docker.git
 ```
-And then run the following commands order to build the `sonar-scanner:3.2.0`:
+And then run the following commands in order to build the `sonar-scanner:3.2.0` image:
 
 ```bash
 cd sonarqube-scanner-docker
@@ -52,6 +52,7 @@ docker build -t sonar-scanner:3.2.0 .
 
 When you run the container it sleeps 2 minutes 
 in order to wait sonarQube server to be up and running.
+(If you have not to wait, then press a SIGINT button)
 
 Replace `$(pwd)/src` with your directory that you want analyze.
 
