@@ -34,11 +34,11 @@ Get the Dockerfile:
 ```bash 
 git clone https://github.com/pierDipi/sonarqube-scanner-docker.git
 ```
-* By adding as submodule:
+* By adding as Git submodule:
 ```bash 
 git submodule add https://github.com/pierDipi/sonarqube-scanner-docker.git
 ```
-And then run the following commands in order to build the `sonar-scanner:3.2.0` image:
+And then run the following commands to build the `sonar-scanner:3.2.0` image:
 
 ```bash
 cd sonarqube-scanner-docker
@@ -50,11 +50,10 @@ docker build -t sonar-scanner:3.2.0 .
 
 ### Running the container
 
-When you run the container it sleeps 2 minutes 
-in order to wait sonarQube server to be up and running.
+When you run the container it sleeps 2 minutes in order to wait for the SonarQube server to be up and running.
 (If you have not to wait, then press a SIGINT button)
 
-Replace `$(pwd)/src` with your directory that you want analyze.
+Replace `$(pwd)/src` with your directory that you want to analyze.
 
 ```bash
 docker run -it --rm --name sonar-scanner --link sonarqube -v $(pwd)/src:/sonar/app/src pierdipi/sonar-scanner:3.2.0
